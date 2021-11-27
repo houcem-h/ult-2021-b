@@ -17,3 +17,12 @@
 <h3>New user name</h3>
 <label>User name: </label>
 <input type="text" [(ngModel)]="user.name">
+<hr>
+<h3>Pipes</h3>
+<ul>
+  <li>{{ today }}</li>
+  <li>{{ today|date:'longDate' }}</li>
+  <li>{{ today|date:'shortDate' }}</li>
+  <li>{{ today|date:'shortTime' }}</li>
+  <li>{{ today|date:'fullDate' }}</li>
+</ul>

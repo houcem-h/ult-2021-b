@@ -12,6 +12,7 @@ export class AboutComponent implements OnInit {
     age: "21",
     email: "foulen@example.com"
   };
+  public today = new Date();
 
   constructor() { }
 
