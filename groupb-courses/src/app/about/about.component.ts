@@ -22,4 +22,8 @@ export class AboutComponent implements OnInit {
     return this.user.name.split('').reverse().join('');
   }
 
+  public changeUserName() {
+    this.user.name = this.user.name == "Mohamed Ben Salah"? "Foulen Ben Foulen" : "Mohamed Ben Salah";
+  }
+
 }
