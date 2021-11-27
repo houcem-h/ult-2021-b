@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +24,8 @@ const routes: Routes = [
     NotFoundComponent
   ],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   exports: [
     RouterModule
