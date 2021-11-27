@@ -1,1 +1,12 @@
 <h2>about works!</h2>
+<h4>User details</h4>
+
+<ul>
+  <li>{{ user.name }} <{{ user.email }}>
+  </li>
+  <li>{{ user.name+ ' <' +user.email+ '>' }}</li>
+  <li>{{ user.name.toUpperCase() }} <{{ user.email }}>
+  </li>
+  <li>{{ reverseName() }} <{{ user.email }}>
+  </li>
+</ul>

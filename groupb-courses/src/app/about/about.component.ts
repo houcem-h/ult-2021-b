@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  public user = {
+    name: "Foulen Ben Foulen",
+    age: "21",
+    email: "foulen@example.com"
+  };
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public reverseName() {
+    return this.user.name.split('').reverse().join('');
   }
 
 }
