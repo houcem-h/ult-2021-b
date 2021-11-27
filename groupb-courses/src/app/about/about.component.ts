@@ -23,7 +23,7 @@ export class AboutComponent implements OnInit {
   }
 
   public changeUserName() {
-    this.user.name = this.user.name == "Mohamed Ben Salah"? "Foulen Ben Foulen" : "Mohamed Ben Salah";
+    this.user.name = this.user.name == "Mohamed Ben Salah" ? "Foulen Ben Foulen" : "Mohamed Ben Salah";
   }
 
 }
