@@ -10,15 +10,18 @@ import { courses } from "src/app/courses-list";
 export class CoursesComponent implements OnInit {
 
   public coursesList = courses;
+  public cartContent: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     //console.log(this.coursesList);
+    this.cartContent = JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
   public addToCart(id: string) {
-    localStorage.setItem('cart', id);
+    this.cartContent.push(id);
+    localStorage.setItem('cart', JSON.stringify(this.cartContent));
   }
 
 }
