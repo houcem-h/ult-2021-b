@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CartService } from "src/app/services/cart.service";
+
 import { courses } from "src/app/courses-list";
 
 @Component({
@@ -10,23 +12,16 @@ import { courses } from "src/app/courses-list";
 export class CoursesComponent implements OnInit {
 
   public coursesList = courses;
-  public cartContent: any[] = [];
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
-    //console.log(this.coursesList);
-    this.cartContent = JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
   public addToCart(id: string) {
-    const course = this.cartContent.filter(elem => elem.id == id)[0];
-    if (course) {
-      course.quantity++;
-    } else {
-      this.cartContent.push({id: id, quantity: 1})
-    }
-    localStorage.setItem('cart', JSON.stringify(this.cartContent));
+    this.cartService.add(id);
   }
 
 }
