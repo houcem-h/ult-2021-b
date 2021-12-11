@@ -20,15 +20,19 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartContentDetails();
-    this.computeTotalPrice();
+    if (this.cartContent.length > 0) {
+      this.computeTotalPrice();
+    }
   }
 
   private getCartContentDetails():void {
     this.cartContent = this.cartService.cartContent;
-    for (let index = 0; index < this.cartContent.length; index++) {
-     const course = courses.filter(course => course.id == this.cartContent[index].id)[0]
-     this.cartContent[index].title = course.title;
-     this.cartContent[index].price = course.price;
+    if (this.cartContent.length > 0) {
+      for (let index = 0; index < this.cartContent.length; index++) {
+        const course = courses.filter(course => course.id == this.cartContent[index].id)[0]
+        this.cartContent[index].title = course.title;
+        this.cartContent[index].price = course.price;
+       }
     }
   }
 
@@ -36,6 +40,11 @@ export class CartComponent implements OnInit {
     this.cartContent.forEach((item: { price: number; quantity: number; }) => {
       this.totalPrice += item.price * item.quantity;
     });
+  }
+
+  public clearCart():void {
+    this.cartService.clear();
+    this.ngOnInit();
   }
 
 }
