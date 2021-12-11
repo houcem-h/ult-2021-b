@@ -23,9 +23,6 @@ export class CartComponent implements OnInit {
      this.cartContent[index].title = course.title;
      this.cartContent[index].price = course.price;
     }
-    console.log(this.cartContent);
-
-
   }
 
 }
